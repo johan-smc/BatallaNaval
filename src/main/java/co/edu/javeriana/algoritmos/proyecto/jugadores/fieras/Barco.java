@@ -1,7 +1,9 @@
-package co.edu.javeriana.algoritmos.proyecto;
+package co.edu.javeriana.algoritmos.proyecto.jugadores.fieras;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import co.edu.javeriana.algoritmos.proyecto.Casilla;
 
 public class Barco {
 	private List<Casilla> casillas;

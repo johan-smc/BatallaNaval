@@ -1,15 +1,21 @@
-package co.edu.javeriana.algoritmos.proyecto;
+package co.edu.javeriana.algoritmos.proyecto.jugadores.fieras;
 
-public class JugadorI implements Jugador{
+import co.edu.javeriana.algoritmos.proyecto.Casilla;
+import co.edu.javeriana.algoritmos.proyecto.Jugador;
+import co.edu.javeriana.algoritmos.proyecto.RespuestaJugada;
+import co.edu.javeriana.algoritmos.proyecto.ResumenTablero;
+import co.edu.javeriana.algoritmos.proyecto.Tablero;
+
+public class JugadorFieras implements Jugador{
 
 	private String nombre;
-	private TableroJ propio;
-	private TableroJ enemigo;
+	private TableroFieras propio;
+	private TableroFieras enemigo;
 	private Casilla ultimaJugada;
 	private int dimension ;
 	private int[] barcos;
 	
-	public JugadorI()
+	public JugadorFieras()
 	{
 		this.nombre = "Fieras";
 	}
@@ -23,14 +29,14 @@ public class JugadorI implements Jugador{
 	public Tablero iniciarTablero(int dimension, int[] barcos) {
 		this.dimension = dimension;
 		this.barcos = barcos;
-		this.propio = new TableroJ(dimension,barcos);
+		this.propio = new TableroFieras(dimension,barcos);
 		Tablero res = this.propio;
 		return res;
 	}
 
 	@Override
 	public void recibirResumenRival(ResumenTablero resumen) {
-		this.enemigo = new TableroJ(resumen,this.dimension,this.barcos);
+		this.enemigo = new TableroFieras(resumen,this.dimension,this.barcos);
 	}
 
 	@Override

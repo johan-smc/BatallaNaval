@@ -1,10 +1,15 @@
-package co.edu.javeriana.algoritmos.proyecto;
+package co.edu.javeriana.algoritmos.proyecto.jugadores.fieras;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class TableroJ implements Tablero {
+import co.edu.javeriana.algoritmos.proyecto.Casilla;
+import co.edu.javeriana.algoritmos.proyecto.RespuestaJugada;
+import co.edu.javeriana.algoritmos.proyecto.ResumenTablero;
+import co.edu.javeriana.algoritmos.proyecto.Tablero;
+
+public class TableroFieras implements Tablero {
 
 	private int[][] matriz;
 	// 0 - neutra,1 -agua , 2- impacto, 3-hundido, 4 - posible
@@ -19,7 +24,7 @@ public class TableroJ implements Tablero {
 	private static int[] diry2 = { 0, 1, 1, 1};
 	
 	
-	public TableroJ(ResumenTablero resumen, int longitud, int[] barcos2) {
+	public TableroFieras(ResumenTablero resumen, int longitud, int[] barcos2) {
 		
 		Arrays.sort(barcos2);
 		this.cantidadBarcosHorizontal = new int[longitud];
@@ -41,7 +46,7 @@ public class TableroJ implements Tablero {
 	}
 
 
-	public TableroJ(int dimension, int[] barcos2) {
+	public TableroFieras(int dimension, int[] barcos2) {
 		this.cantidadBarcosHorizontal = new int[dimension];
 		this.cantidadBarcosVertical = new int[dimension];
 		this.matriz = new int[dimension][dimension];
